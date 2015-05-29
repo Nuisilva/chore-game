@@ -1,0 +1,18 @@
+<div>
+    <p>Kids</p>
+
+    <form name="newKidForm">
+        <input type="text" ng-model="newKidName" placeholder="New Child Name..." required/>
+        <input type="text" ng-model="password" placeholder="Child's Password" required/>
+        <button ng-disabled="newKidForm.$invalid" ng-click="createKid(newKidName, password)">Add Kid</button>
+    </form>
+
+    <ul>
+        <li ng-repeat="kid in kid">
+            <span ng-click="remove($index)"> X </span>
+            {{ kid.name }}
+        </li>
+    </ul>
+
+
+</div>
