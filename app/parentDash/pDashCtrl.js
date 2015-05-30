@@ -4,4 +4,7 @@ app.controller ('pDashCtrl', function($scope, kidRef, choreRef, $firebaseArray, 
 
 	$scope.kid = $firebaseArray(kidRef);
 	$scope.chore = $firebaseArray(choreRef);
+
+	
+
 });

@@ -1,4 +1,4 @@
-var app = angular.module('choreGame', ['firebase', 'ngRoute']);
+var app = angular.module('choreGame', ['firebase', 'ngRoute', 'angularjs-dropdown-multiselect']);
 app.constant('fb', {
   url: 'https://choregame.firebaseio.com/'
 })

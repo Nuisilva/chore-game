@@ -8,4 +8,12 @@ angular.module('choreGame');
         discription: discription
       });
   	}
+
+  	$scope.remove = function(index){  //$index will give you the index of the ng-repeated item
+
+    var item = $scope.chore[index]
+
+    $scope.chore.$remove(item);
+
+    }
   });

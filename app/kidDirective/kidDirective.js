@@ -6,26 +6,42 @@ app.directive('dirKid', function(){
     	templateUrl: 'app/kidCreate/kid.html',
     	scope: {
         kid: '=',
-        chore: '=',
-
+        chore: '='
       },
     	link: function(scope, element, attribute){
           
-        element.on('click', function(){
-        scope.show = !scope.show;
-          scope.$apply();
-          });
-        
-
-    		
-        },
-        controller: function($scope){
-          
-        
       
-          // console.log($scope.kid);
-          // console.log($scope.chore)
-        }
-      };
+        
+      },
+      controller: function($scope){
+        
+        $scope.kidJob = [];
+        
+         
+         $scope.choreModel = []
+      	 $scope.settings = {
+          displayProp: 'title',
+          idProp: '$id',
+          showCheckAll: false
+         };
+      
+         $scope.event = {
+
+            onItemSelect : function(chore){
+
+              console.log($scope.choreModel)
+            }, 
+            onItemDeselect: function(chore){
+
+             
+              console.log($scope.choreModel)
+            }
+
+          } 
+   
+   // controller
+      }
+  // return
+  };
 
 });			

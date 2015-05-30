@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='choreGame'>
 <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
   <meta charset="UTF-8">
-  <title>Test App</title>
+  <title>ROBOTS!</title>
 </head>
-  <body>
+  
+
+ <body>
  <div ng-controller='mainCtrl'>
     <button ng-click="go('/chorecreate')">Create Chore</button>
     <button ng-click="go('/kidcreate')">add child</button>
@@ -14,14 +23,38 @@
   <div ng-view><div>
 
 
+<!-- JQuery -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
 
+ <!--  angular -->
+ 
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.js"></script>
+  <!-- bootstrap -->
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ 
+ <!--  Firebase -->
+  
+  <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+ 
+ <!--  Angular Route -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+ 
+
+  <script src="app/Dropdown/lodash.js"></script>
+  <script src="app/Dropdown/src/angularjs-dropdown-multiselect.js"></script>
   <script src="app/app.js"></script>
+
+
+   <!--  dropdown directive -->
+  
+  
+
   <script src="app/mainCtrl.js"></script>
+
   
   <!-- Chore Create -->
 
@@ -41,5 +74,6 @@
  <!--  Directives -->
   <script src="app/kidDirective/kidDirective.js"></script>
   <script src="app/kidDirective/jobDirective.js"></script>
+
   </body>
 </html>
