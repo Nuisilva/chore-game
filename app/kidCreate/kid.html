@@ -8,17 +8,17 @@
     	<div class="kidName"> <h1>{{kid.name}}</h1></div>
     </div>
 
-<!-- 
-    <div id='jobs'>
-       	<h3 ng-repeat = "chore in chore">
-        	<input type="checkbox" checkbox-model='jobz'/> {{chore.title}} 
-        </h3>
-   	</div> -->
+
     
     <dir-dropdown options="chore" selected-model="choreModel" extra-settings="settings" events= "event" ></dir-dropdown>
 
-   <!--  <button id='kid-submit' ng-click = "addKidJob(jobz)" >Submit</button> -->
+   <button id='kid-submit' ng-click = "addJob(choreModel)" >Submit</button> 
 
-   
+   <!-- i can get choreModel to repeate here, but not in 
+   the parentDash, so im guessing i'm having scope issues in reguards to directives -->
+
+   <div ng-repeat = 'chore in choreModel'>
+    {{chore}}
+  </div>
 
     

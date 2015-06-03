@@ -47,7 +47,21 @@ app.config(function($routeProvider){
             return choreService.choreList();
             }
           }
-  }) 
+  })
+
+  .when('/kid', {
+      templateUrl: 'app/kidDash/kidDash.html',
+      // controller: 'pDashCtrl',
+      resolve: {
+        kidRef : function(kidService){
+          return kidService.kidList();
+          },
+        
+        choreRef : function(choreService){
+          return choreService.choreList();
+          }
+        }
+  })  
   .otherwise ({
       redirectTo: '/parent'
     })
