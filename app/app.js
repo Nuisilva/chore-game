@@ -27,7 +27,7 @@ app.config(function($routeProvider){
 
   .when('/kidcreate/:kidId', {
      templateUrl: 'app/kidCreate/kid.html',
-     controller: 'kidCtrl',
+     controller: 'kidDashCtrl',
         resolve: {
           kidsRef: function (kidService, $route) {
           return kidService.getKid($route.current.params.kidId);
@@ -38,6 +38,9 @@ app.config(function($routeProvider){
   .when('/parent', {
       templateUrl: 'app/parentDash/parentDash.html',
       controller: 'pDashCtrl',
+
+      //directives have access to the controllers because they are injected here
+      // you dont actually have to put them in the html for them to have access to the socpes
       resolve: {
         kidRef : function(kidService){
           return kidService.kidList();
@@ -49,22 +52,41 @@ app.config(function($routeProvider){
           }
   })
 
-  .when('/kid', {
+  .when('/kid/:kidId', {
       templateUrl: 'app/kidDash/kidDash.html',
-      // controller: 'pDashCtrl',
+      controller: 'kidDashCtrl',
       resolve: {
-        kidRef : function(kidService){
-          return kidService.kidList();
+        kidRef: function(kidService, $route){
+          return kidService.getKid($route.current.params.kidId);
           },
         
-        choreRef : function(choreService){
-          return choreService.choreList();
-          }
-        }
-  })  
-  .otherwise ({
-      redirectTo: '/parent'
-    })
+        // kidChores : function(kidId){
+        //   return choreService.getKidChore(kidId);
+        //   }
+      }
+  })
 
+  // login stuff  
+
+  .when('/login',{
+    templateUrl: 'app/FirebaseLogin/login.html',
+    controller: 'LoginCtrl'
+  })
+  .when('/dashboard/:userId', {
+    templateUrl: 'app/FirebaseLogin/dashboard.html',
+    controller: 'DashboardCtrl',
+    resolve: {
+      userReference: function(firebaseService, $route){
+        return firebaseService.getUser($route.current.params.userId);
+      },
+      thingsReference: function(firebaseService, $route){
+        return firebaseService.getThings($route.current.params.userId);
+      }
+    }
+  })
+  .otherwise({
+    redirectTo: '/kid'
+  });
+  
 
 });

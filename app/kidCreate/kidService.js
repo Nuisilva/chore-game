@@ -12,4 +12,9 @@ app.service ('kidService', function(fb){
 		return new Firebase(fb.url + '/kidList/' + kidId)   // capitalize new instance in (constructors)
 	}
 
+	// this.getJob = function(kidId){
+
+	// 	return new Firebase(fb.url + 'kidList/' + kidId.job)
+	// }
+
 })

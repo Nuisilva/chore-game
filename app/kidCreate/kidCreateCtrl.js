@@ -1,27 +1,25 @@
 angular.module('choreGame');
-  app.controller('kidCreateCtrl', function ( $scope, kidRef, $firebaseArray) {
-    $scope.kid = $firebaseArray(kidRef);
+  app.controller('kidCreateCtrl', function ( $scope, kidRef, kidService, $firebaseObject) {
+    $scope.kid = $firebaseObject(kidRef);
 
 	$scope.kid.$loaded().then(function (kid) {
       console.log(kid);
     });
 
 	$scope.createKid = function (name, password) {
-      $scope.kid.$add({
+      $scope.kid[name] = {
         name: name,
         password: password,
         points: 0,
-        jobs: [""],
-        
-
-      });
+      };
+      $scope.kid.$save();
   	}
 
-    $scope.remove = function(index){  //$index will give you the index of the ng-repeated item
-
-    var item = $scope.kid[index]
-
-    $scope.kid.$remove(item);
+    $scope.remove = function(key){  //$index will give you the index of the ng-repeated item
+      console.log(key)
+      // var item = $scope.kid[key]
+      var kidToRemoveRef = $firebaseObject(kidService.getKid(key))
+      kidToRemoveRef.$remove();
 
     }
 

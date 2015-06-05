@@ -9,7 +9,7 @@
 
     <ul>
         <li ng-repeat="kid in kid">
-            <span ng-click="remove($index)"> X </span>
+            <span ng-click="remove(kid.name)"> X </span>
             {{ kid.name }}
         </li>
     </ul>

@@ -18,45 +18,47 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
         
       },
       controller : function($scope){
-
-        //this is comming from my app.js file and is a resolve?
-        //it points to my firebase array is my understanding
-        // $scope.kid = $firebaseArray(kidRef);
-
-        //here i'm trying to put the choreModel into kidList.job
-        // $scope.job = function (choreModeL){
-
-        //   $scope.kid.$add({
-        //     jobs: choreModel
-        //   })
-        // }
+        console.log($scope.kid)
+      //cant call an add on a single object. You have to call a $add on the entire array/object
+      //so creating a new Firebase object will allow you to call a .add on it.
         
         var choreRef = new Firebase(fb.url + '/kidList/' + $scope.kid.$id)
+
+      //the chrore ref is a constructor that will allow me to get the id and add to a location
+      //it finds the single object in the fb array and allows me to use it.
+      // It finds it by the $scope.kid.$id because each directive repeated is a new directive
+      // so this finds the one directive i want to be using.
         // var choreArr = $firebaseArray(choreRef);
         var choreObj = $firebaseObject(choreRef);
 
-         console.log($scope.kid)
+         
          $scope.choreModel = []
       	 $scope.settings = {
           displayProp: 'title',
           idProp: '$id',
-          showCheckAll: false
+          showCheckAll: false,
+          showUncheckAll: false
          };
       
          $scope.event = {
 
-            //i can see it working here, it adds to choreModel here
             onItemSelect : function(chore){
+             
               choreObj.jobs = $scope.choreModel;
               choreObj.$save();
-              console.log($scope.choreModel)
+             
+
+              //this is saving it to the firebase array. .$add will add to teh array
+              //$save will replace all the information that is in the object. To use an
+              //array you have to call the specific key because fb does not use actuall arrays
+              // it still has to look for the property on the key.
             }, 
             onItemDeselect: function(chore){
               choreObj.jobs = $scope.choreModel;
               choreObj.$save();
 
-             // and takes away the object here. kinda fun to watch.
-              console.log($scope.choreModel)
+             // this saves because it's simply saving nothing on top of existing
+             
             }
 
           } 

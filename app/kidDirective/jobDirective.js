@@ -4,9 +4,11 @@ app.directive('dirJob', function(){
 
   return {
     	templateUrl: 'app/kidCreate/kid.html',
-    	// scope: {
-    	// chore: '='
-    	// },
+    	scope: {
+    	
+        chore: '='
+    	
+        },
     	
     	link: function(scope, element, attribute){
       
@@ -14,7 +16,7 @@ app.directive('dirJob', function(){
         },
         controller: function($scope){
            
-              
+              console.log(scope.chores)
          
         }
       };

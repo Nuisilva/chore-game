@@ -1,11 +1,11 @@
-var app = angular.module('choreGame');
+// var app = angular.module('choreGame');
 
-app.service('pDashService'  function(fb){
+// app.service('pDashService'  function(fb){
 
 
-	this.addJob =  function(){
+// 	this.addJob =  function(){
 
-		return new Firebase(fb.url + '/kidList' + kidId + job.title);
-	}
+// 		return new Firebase(fb.url + '/kidList' + kidId + job.title);
+// 	}
 
-})
+// })

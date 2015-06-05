@@ -21,7 +21,7 @@
     <button ng-click="go('/kid')">Child</button>
     <button ng-click="go('/parent')">Home</button>
   </div>
-  <div ng-view><div>
+  <div ng-view></div>
 
 
 <!-- JQuery -->
@@ -75,6 +75,7 @@
   <!-- kid Dash -->
   <script src="app/kidDash/kidDash.js"></script>
   <script src="app/kidDash/dirJobDisplay.js"></script>
+  <script src="app/kidDash/kidDashCtrl.js"></script>
 
 
 
@@ -82,5 +83,10 @@
   <script src="app/kidDirective/kidDirective.js"></script>
   <script src="app/kidDirective/jobDirective.js"></script>
 
+  <!-- login stuff -->
+  <script src="app/FirebaseLogin/authService.js"></script>
+  <script src="app/FirebaseLogin/DashboardCtrl.js"></script>
+  <script src="app/FirebaseLogin/firebaseService.js"></script>
+   <script src="app/FirebaseLogin/LoginCtrl.js"></script>
   </body>
 </html>
