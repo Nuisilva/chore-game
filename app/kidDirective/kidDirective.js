@@ -7,6 +7,7 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
     	scope: {
         kid: '=',
         chore: '=',
+        role: '='
         //tried adding job below to the scope, didn't work
         //also added to parentDahs.html and caled it job.
         //havent commented that out.
@@ -18,7 +19,8 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
         
       },
       controller : function($scope){
-        console.log($scope.kid)
+        // console.log($scope.kid)
+        $scope.role = "parent"
       //cant call an add on a single object. You have to call a $add on the entire array/object
       //so creating a new Firebase object will allow you to call a .add on it.
         

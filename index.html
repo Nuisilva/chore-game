@@ -4,22 +4,24 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+
 
   <meta charset="UTF-8">
   <title>ROBOTS!</title>
 </head>
   
 
- <body>
+ <body >
  <div ng-controller='mainCtrl'>
-    <button ng-click="go('/chorecreate')">Create Chore</button>
-    <button ng-click="go('/kidcreate')">add child</button>
-    <button ng-click="go('/kid')">Child</button>
-    <button ng-click="go('/parent')">Home</button>
+    <button class="btn-default" ng-click="go('/chorecreate')">Create Chore</button>
+    <button class="btn-default" ng-click="go('/kidcreate')">add child</button>
+    <button class="btn-default" ng-click="go('/kid')">Child</button>
+    <button class="btn-default" ng-click="go('/parent')">Home</button>
   </div>
   <div ng-view></div>
 
@@ -73,8 +75,8 @@
   <script src="app/parentDash/pDashCtrl.js"></script>
 
   <!-- kid Dash -->
-  <script src="app/kidDash/kidDash.js"></script>
-  <script src="app/kidDash/dirJobDisplay.js"></script>
+  
+  <script src="app/kidDash/jobDisplay.js"></script>
   <script src="app/kidDash/kidDashCtrl.js"></script>
 
 

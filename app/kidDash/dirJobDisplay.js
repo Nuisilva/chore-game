@@ -6,37 +6,17 @@ app.directive('jobKidDash', function($firebaseArray, fb, $firebaseObject, $route
 
 		templateUrl: 'app/kidDash/jobDisplay.html',
 
-		// scope: {
+		scope: {
 
-		// 	kid: '='
-		// },
+			daChores: '='
+		},
 
 		
 
 		controller : function($scope){
-			$scope.kid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId))
-			$scope.kidJobs = $firebaseArray(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId + '/jobs/'));
-			var chores = $firebaseArray(new Firebase(fb.url + '/chorelist/'))
-			// $scope.kidJobs.$loaded().then(function (kid) {
-		    $scope.kidsChores = []
-		    // console.log(chores)
-		    $scope.kidJobs.$loaded(function(){
-		    	chores.$loaded(function(){
-		    		getChores();
-		    	})
-		    })
 
-		    function getChores(){
-			    for(var i = 0; i < $scope.kidJobs.length; i++){
-			    	for(var j = 0; j < chores.length; j++){
-			    		if($scope.kidJobs[i].id === chores[j].$id){
-			    			$scope.kidsChores.push(chores[j])
-			    		}
-			    	}
-			    }
-			    // console.log($scope.kidJobs);
-			    console.log($scope.kidsChores);
-		    }
+			
+			
 		     
 
 		    //this is the button for the kids that will add the approval methods onto the

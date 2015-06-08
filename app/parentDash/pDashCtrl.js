@@ -6,7 +6,7 @@ app.controller ('pDashCtrl', function($scope, kidRef, choreRef, $firebaseArray, 
 	$scope.chore = $firebaseArray(choreRef);
 	$scope.chore.$loaded().then(function(anything){
 
-		console.log(anything)
+		// console.log(anything)
 	})
 
 	
