@@ -29,7 +29,7 @@ app.controller ('kidDashCtrl', function($scope, $route, fb, kidRef, $firebaseArr
 		    }
 	// $scope.kidChores = $firebaseArray(kidChores);
 
-	// console.log ($scope.kid)
+	console.log ($scope.kid.$id)
 
 	
 });

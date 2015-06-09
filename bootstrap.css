@@ -1100,6 +1100,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  color: #000;
 }
 a {
   color: #337ab7;

@@ -69,7 +69,12 @@ html, body {
 
 .jobCrest {
 	padding-top: 25px;
-	height: 25%;
-	width: 25%;
+	height: 15%;
+	width: 15%;
+	text-align: center;
+}
+
+.test {
+	float: left;
 }
 	
