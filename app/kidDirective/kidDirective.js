@@ -47,8 +47,8 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
       
          $scope.event = {
 
-            onItemSelect : function(chore){
-             console.log($scope.chore)
+            onItemSelect : function(chore, title){
+             console.log(chore)
               choreObj.jobs = $scope.choreModel;
               choreObj.$save();
 
@@ -58,7 +58,8 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
               //array you have to call the specific key because fb does not use actuall arrays
               // it still has to look for the property on the key.
             }, 
-            onItemDeselect: function(chore){
+            onItemDeselect: function(chore, $id){
+              console.log($id)
               choreObj.jobs = $scope.choreModel;
               choreObj.$save();
 

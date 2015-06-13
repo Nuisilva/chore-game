@@ -7,9 +7,12 @@ app.controller ('kidDashCtrl', function($scope, $route, fb, kidRef, $firebaseArr
 	$scope.kid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId))
 	$scope.kidJobs = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId + '/jobs/'))
 	
-	
+	var test = new Firebase(fb.url + '/kidList/' + $route.current.params.kidId )
 
-	
 
+	var list = $firebaseArray(test);
+// list.$keyAt(1); // bravo
+// list.$keyAt( list[1] );
+console.log(list[1])
 	
 });

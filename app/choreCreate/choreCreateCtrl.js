@@ -23,7 +23,9 @@ angular.module('choreGame');
         title: title,
         discription: discription,
         coins: $scope.currentValue.coins,
-        approve: true
+        approve: true,
+        jobApproved: false,
+        test: 'test'
       };
       $scope.chore.$save();
   	};

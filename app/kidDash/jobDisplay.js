@@ -18,40 +18,35 @@ app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject, $route
 
 		controller : function($scope){
 
-
+console.log($scope.job)
 
 			$scope.addCoins = function(){
 				ref = new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index)
 				kidRef = $firebaseObject(new Firebase(fb.url + '/kidList/' + $scope.kid.$id));
 		  		coinRef = $firebaseObject(new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index + '/coins')); 
-		  		var list = $firebaseArray(ref);
-		  		list.$indexfor(ref)
-
-		  		console.log("test")
-		  		jobRef = $firebaseObject(new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index)); 
+		  		jobRef = $firebaseObject(new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index));
+		     
 		  		kidRef.$loaded(function(){
-		  			console.log(kidRef)
-		  			console.log(coinRef)
+		  			kidRef.coins += Number(coinRef.$value)
+		  			kidRef.$save().then(function(){
 
-		  			kidRef.coins += Number(coinRef.$value) //number evaluates the value as a number
-
-		  			kidRef.$save()
-
-		  			jobRef.$remove();
-
+		  				jobRef.jobApproved = true;
+		  				jobRef.$save();
+		  			})
+		  			
 
 		  		})
-
-
-		  		
-		  		
-
 			}
 
-			$scope.approve = function(){
+			
+			$scope.submitJob = function(){
 			
 			 jobApproveObj = $firebaseObject(new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index));
+		     
+		     console.log($scope.jobapproveObj)
+
 		     jobApproveObj.$loaded(function(){
+			    console.log($scope.jobapproveObj)
 			    jobApproveObj.approve = false;
 			    jobApproveObj.$save().then(function(res){
 			    	alert("Job Submited to Mom", res)

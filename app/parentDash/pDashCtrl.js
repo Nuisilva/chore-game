@@ -8,6 +8,9 @@ app.controller ('pDashCtrl', function($scope, kidRef, choreRef, $firebaseArray, 
 
 		// console.log(anything)
 	})
+	$scope.role = 'parent'
+
+	console.log($scope.role)
 
 	
 	

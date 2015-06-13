@@ -3,7 +3,7 @@ angular.module('choreGame');
     $scope.kid = $firebaseObject(kidRef);
 
 	$scope.kid.$loaded().then(function (kid) {
-      console.log(kid);
+     
     });
 
 	$scope.createKid = function (name, password) {
