@@ -10,7 +10,7 @@ angular.module('choreGame');
       $scope.kid[name] = {
         name: name,
         password: password,
-        points: 0,
+        coins: 0,
         role: 'child'
       };
       $scope.kid.$save();

@@ -1,14 +1,16 @@
 <!-- This is my main HTML for Kid Dashboard -->
+<div class= "holder">
+	<div class = 'kidDashWrapper'>
+		<div job-display index="{{$index}}" job = "choreRef" ng-repeat='choreRef in kidJobs track by $index' kid = 'kid'>
+		</div>
+	</div>
+
+
+	<div class = 'kidDisplay'>
+		<div kid-info kid = "kid" >
+		</div>
+	</div>
+	</div>
 
 
 
-<div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores'>
-</div>
-
-<!-- Your Chore is <ul ng-repeat = "job in kidsChores">
-					<li> <h3>{{job.title}} </h3> </li>
-					<li> {{job.pointVal}}
-					</ul> -->
-
-<!-- look at parent dash for how to reapeat the jobs directive
- -->

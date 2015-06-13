@@ -4,21 +4,23 @@ app.directive('kidInfo', function($firebaseArray, fb, $firebaseObject, $route){
 
 	return {
 
-		templateUrl: 'app/kidDash/jobDisplay.html',
-
+		templateUrl: 'app/kidDash/kidDisplay.html',
 		scope: {
+			
+			kid: '=',
+			// role: '='
 
-			daChores: '='
 		},
+
 
 		
 
 		controller : function($scope){
 
 			
-			
+			// $scope.daKid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId '/jobs' ));
 		     
-
+			
 		    //this is the button for the kids that will add the approval methods onto the
 		    //job that will update the parents list for that kid and allow the parents to approve
 		    // or send it back to the kids

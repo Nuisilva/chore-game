@@ -59,6 +59,8 @@ app.config(function($routeProvider){
         kidRef: function(kidService, $route){
           return kidService.getKid($route.current.params.kidId);
           },
+
+        
         
         // kidChores : function(kidId){
         //   return choreService.getKidChore(kidId);

@@ -23,7 +23,7 @@ angular.module('choreGame');
         title: title,
         discription: discription,
         coins: $scope.currentValue.coins,
-        approve: false
+        approve: true
       };
       $scope.chore.$save();
   	};

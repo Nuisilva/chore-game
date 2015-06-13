@@ -33,11 +33,14 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
         // var choreArr = $firebaseArray(choreRef);
         var choreObj = $firebaseObject(choreRef);
 
+        console.log($scope.chore)
+
          
-         $scope.choreModel = []
+         $scope.choreModel = [],
       	 $scope.settings = {
           displayProp: 'title',
           idProp: '$id',
+          externalIdProp: '',
           showCheckAll: false,
           showUncheckAll: false
          };
@@ -45,10 +48,10 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
          $scope.event = {
 
             onItemSelect : function(chore){
-             
+             console.log($scope.chore)
               choreObj.jobs = $scope.choreModel;
               choreObj.$save();
-             
+
 
               //this is saving it to the firebase array. .$add will add to teh array
               //$save will replace all the information that is in the object. To use an
