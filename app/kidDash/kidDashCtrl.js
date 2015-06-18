@@ -1,13 +1,13 @@
 var app = angular.module('choreGame');
 
-app.controller ('kidDashCtrl', function($scope, $route, fb, kidRef, $firebaseArray, $firebaseObject, kidService){
+app.controller ('kidDashCtrl', function($scope, $stateParams, fb, kidRef, $firebaseArray, $firebaseObject, kidService){
 	$scope.test = "test"
 	
 
-	$scope.kid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId))
-	$scope.kidJobs = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId + '/jobs/'))
+	$scope.kid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $stateParams.kidId))
+	$scope.kidJobs = $firebaseObject(new Firebase(fb.url + '/kidList/' + $stateParams.kidId + '/jobs/'))
 	
-	var test = new Firebase(fb.url + '/kidList/' + $route.current.params.kidId )
+	var test = new Firebase(fb.url + '/kidList/' + $stateParams.kidId )
 
 
 	var list = $firebaseArray(test);

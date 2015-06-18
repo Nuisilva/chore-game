@@ -1,6 +1,6 @@
 var app = angular.module('choreGame');
 
-app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject, $route){
+app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject){
 
 
 	return {

@@ -1,20 +1,36 @@
-var app = angular.module('choreGame', ['firebase', 'ngRoute', 'angularjs-dropdown-multiselect']);
+var app = angular.module('choreGame', ['firebase', 'ui.router', 'angularjs-dropdown-multiselect']);
 app.constant('fb', {
   url: 'https://choregame.firebaseio.com/'
 })
-app.config(function($routeProvider){
-  $routeProvider
-  .when('/chorecreate', {
-  	 templateUrl : 'app/choreCreate/create.html',
-  	 controller: 'choreCreateCtrl',
-  	   resolve: {
-  		    choreRef : function(choreService){
-  			   return choreService.choreList();
-  		   }
+app.config(function($stateProvider, $urlRouterProvider){
+  
+  $stateProvider
+  
+  .state('chorecreate', {
+     url : '/choreCreate',
+     templateUrl: 'app/choreCreate/create.html',
+     controller: 'choreCreateCtrl',
+       resolve: {
+          choreRef : function(choreService){
+           return choreService.choreList();
+         },
        }
 
   })
-  .when('/kidcreate', {
+
+  .state('kidcreate/:kidId', {
+    url: '/kidcreate/:kidId',
+     templateUrl: 'app/kidCreate/kid.html',
+     controller: 'kidDashCtrl',
+        resolve: {
+          kidsRef: function (kidService, $state) {
+          return kidService.getKid($stateParams.current.params.kidId);
+          }
+        }
+     })
+
+  .state('kidcreate', {
+    url: '/kidcreate',
      templateUrl : 'app/kidCreate/kidcreate.html',
      controller: 'kidCreateCtrl',
        resolve: {
@@ -25,17 +41,8 @@ app.config(function($routeProvider){
 
   })
 
-  .when('/kidcreate/:kidId', {
-     templateUrl: 'app/kidCreate/kid.html',
-     controller: 'kidDashCtrl',
-        resolve: {
-          kidsRef: function (kidService, $route) {
-          return kidService.getKid($route.current.params.kidId);
-          }
-        }
-     })
-
-  .when('/parent', {
+  .state('parent', {
+      url: '/parent',
       templateUrl: 'app/parentDash/parentDash.html',
       controller: 'pDashCtrl',
 
@@ -52,12 +59,13 @@ app.config(function($routeProvider){
           }
   })
 
-  .when('/kid/:kidId', {
+  .state('kid/:kidId', {
+      url: '/kid/:kidId',
       templateUrl: 'app/kidDash/kidDash.html',
       controller: 'kidDashCtrl',
       resolve: {
-        kidRef: function(kidService, $route){
-          return kidService.getKid($route.current.params.kidId);
+        kidRef: function(kidService, $stateParams){
+          return kidService.getKid($stateParams.kidId);
           },
 
         
@@ -70,25 +78,25 @@ app.config(function($routeProvider){
 
   // login stuff  
 
-  .when('/login',{
-    templateUrl: 'app/FirebaseLogin/login.html',
-    controller: 'LoginCtrl'
-  })
-  .when('/dashboard/:userId', {
-    templateUrl: 'app/FirebaseLogin/dashboard.html',
-    controller: 'DashboardCtrl',
-    resolve: {
-      userReference: function(firebaseService, $route){
-        return firebaseService.getUser($route.current.params.userId);
-      },
-      thingsReference: function(firebaseService, $route){
-        return firebaseService.getThings($route.current.params.userId);
-      }
-    }
-  })
-  .otherwise({
-    redirectTo: '/kid'
-  });
+  // .when('/login',{
+  //   templateUrl: 'app/FirebaseLogin/login.html',
+  //   controller: 'LoginCtrl'
+  // })
+  // .when('/dashboard/:userId', {
+  //   templateUrl: 'app/FirebaseLogin/dashboard.html',
+  //   controller: 'DashboardCtrl',
+  //   resolve: {
+  //     userReference: function(firebaseService, $route){
+  //       return firebaseService.getUser($route.current.params.userId);
+  //     },
+  //     thingsReference: function(firebaseService, $route){
+  //       return firebaseService.getThings($route.current.params.userId);
+  //     }
+  //   }
+  // })
+  // .otherwise({
+  //   redirectTo: '/kid'
+  // });
   
 
 });
