@@ -1,8 +1,13 @@
 
 <!-- <div controller='pDashCtrl'> -->
 
-<dir-kid kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids" ></dir-kid>
-<div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores'>
+<dir-kid kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids" >
+</dir-kid>
+
+<!-- <div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores' kid='theKid'> -->
+
+<ui-view></ui-view>
+
 <!-- </div> -->
 	
 

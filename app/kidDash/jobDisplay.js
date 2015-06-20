@@ -14,11 +14,11 @@ app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject){
 
 		},
 
-				
+		restrict: 'AE',
 
 		controller : function($scope){
 
-console.log($scope.job)
+			console.log('JobDisplay Directive Working', $scope.kid)
 
 			$scope.addCoins = function(){
 				ref = new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index)

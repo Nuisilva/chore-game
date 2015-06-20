@@ -15,10 +15,11 @@ html, body {
 
 .avatarHolder {
 	margin: 20px;
-	width: 760;
+	width: 75%;
 	height: 200px;
 	background-image: url('assets/kidBar.svg');
 	background-repeat: no-repeat;
+	
 	display: flex;
 	flex-flow: flex-start;
 }
@@ -110,3 +111,12 @@ html, body {
 	color: #FF7600;
 
 	}
+
+.displayoJobs {
+
+	width: 25%;
+	height: 100%;
+	background: red;
+	float: right;
+
+}

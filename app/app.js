@@ -18,15 +18,18 @@ app.config(function($stateProvider, $urlRouterProvider){
 
   })
 
-  .state('kidcreate/:kidId', {
-    url: '/kidcreate/:kidId',
+  .state('kidcreate/:kid', {
+    url: '/kidcreate/:kid',
      templateUrl: 'app/kidCreate/kid.html',
      controller: 'kidDashCtrl',
         resolve: {
           kidsRef: function (kidService, $state) {
-          return kidService.getKid($stateParams.current.params.kidId);
+          return kidService.getKid($stateParams.current.params.kid);
           }
-        }
+        },
+        choreRef : function(choreService){
+            return choreService.choreList();
+            }
      })
 
   .state('kidcreate', {
@@ -58,14 +61,37 @@ app.config(function($stateProvider, $urlRouterProvider){
             }
           }
   })
+   .state('parent.kidJobz', {
+      url: '/:kid',
+      params:{
+          kid: {
+            value: 'stufff'
+          }
 
-  .state('kid/:kidId', {
-      url: '/kid/:kidId',
+      },
+      templateUrl: 'app/parentDash/jobzDisplay.html',
+      controller: 'kidDashCtrl',
+
+      //directives have access to the controllers because they are injected here
+      // you dont actually have to put them in the html for them to have access to the socpes
+      resolve: {
+        kidRef: function(kidService, $stateParams){
+          return kidService.getKid($stateParams.kid);
+          },
+        
+          choreRef : function(choreService){
+            return choreService.choreList();
+            }
+          }
+  })
+
+  .state('kid/:kid', {
+      url: '/kid/:kid',
       templateUrl: 'app/kidDash/kidDash.html',
       controller: 'kidDashCtrl',
       resolve: {
         kidRef: function(kidService, $stateParams){
-          return kidService.getKid($stateParams.kidId);
+          return kidService.getKid($stateParams.kid);
           },
 
         
