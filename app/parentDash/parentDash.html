@@ -1,12 +1,95 @@
 
 <!-- <div controller='pDashCtrl'> -->
 
-<dir-kid kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids" >
-</dir-kid>
+<div class="container">
+			<!-- Push Wrapper -->
+			<div class="mp-pusher" id="mp-pusher">
+
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu">
+					<div class="mp-level">
+						<h2 class="icon icon-world">All Categories</h2>
+						<ul>
+								<li class="icon icon-display" dir-kid  kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids">
+								</li>
+							
+							<li class="icon icon-arrow-left">
+								<a class="icon icon-display" href="#">Devices</a>
+								<div class="mp-level">
+									<h2 class="icon icon-display">Devices</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+					
+										<li class="icon icon-arrow-left">
+											<a class="icon icon-tv" href="#">Televisions</a>
+											<div class="mp-level">
+												<h2>Televisions</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul>
+													
+												</ul>
+											</div>
+										</li>
+										<li class="icon icon-arrow-left">
+											<a class="icon icon-camera" href="#">Cameras</a>
+											<div class="mp-level">
+												<h2>Cameras</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul>
+													<li><a href="#">Smart Shot</a></li>
+													<li><a href="#">Power Shooter</a></li>
+													<li><a href="#">Easy Photo Maker</a></li>
+													<li><a href="#">Super Pixel</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a class="icon icon-news" href="#">Magazines</a>
+								<div class="mp-level">
+									<h2 class="icon icon-news">Magazines</h2>
+									<a class="mp-back" href="#">back</a>
+									
+								</div>
+							</li>
+							
+						</ul>
+							
+					</div>
+				</nav>
+				<!-- /mp-menu -->
+
+				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
+					
+						
+						<div class="content clearfix">
+							<p><a href="#" id="trigger" class="menu-trigger">View Children</a></p>
+											
+							<div   id="jobHolder" ui-view ></div>
+							
+							
+						</div>
+					<!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+			</div><!-- /pusher -->
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/mlpushmenu.js"></script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		</script>
+
+
+
+
+
+
 
 <!-- <div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores' kid='theKid'> -->
 
-<ui-view></ui-view>
 
 <!-- </div> -->
 	

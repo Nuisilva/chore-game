@@ -14,34 +14,84 @@ html, body {
 /*the avartar stuff*/
 
 .avatarHolder {
-	margin: 20px;
-	width: 75%;
-	height: 200px;
-	background-image: url('assets/kidBar.svg');
-	background-repeat: no-repeat;
 	
-	display: flex;
-	flex-flow: flex-start;
+	width: 50%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 10;
 }
 
 .avatar {
-
+	/*padding: 10%;*/
 	height: 100%;
-	width: 150px;
-	margin: auto 40px;
+	width: 100%;
+	opacity: .5;
+ transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
 
+.avatar:hover {
+
+	opacity: 1;
+}
+
+.avatar:active {
+
+	opacity: 1;
 }
 
 /*///////information -- Name, dropdown, status bar */
 
-#infoWrapper {
+.dirKidDisplay {
+	width: 100%;
+	display: flex;
 
+	flex-direction: column;
+	justify-content: center;
+}
+
+.kidDisplay {
+
+	width: 33%;
+}
+.dirJobDispay {
+
+	width: 50%;
+
+}
+#kidNav {
+
+	font-family: 'Paytone One', sans-serif;
+	font-size: 24px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	text-decoration: none;
+
+}
+.statusBar {
+	width: 20%;
+}
+.daBar {
+
+	background-image: url(assets/kidBar.svg);
+	background-repeat: no-repeat;
+}
+
+
+
+.infoWrapper {
+	padding-top: 15px;
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: column;
-	align-items: center
-	justify-content: flex-start;
+	/*background-image: url(assets/kidBar.svg);
+	background-repeat: no-repeat;
+*/
+	/*flex-direction: column;
+	justify-content: flex-start;*/
 }
 .spacer {
 
@@ -53,11 +103,11 @@ html, body {
 
 .kidName {
 
-	width: 75%;
-	height: 66%;
+	width: 100%;
+	height: 33%;
 	color: #FF7600;
 	padding-left: 15px;
-	font-size: 55px;
+	font-size: 2em;
 	font-family: 'Paytone One', sans-serif;
 	letter-spacing: 3px;
 }
@@ -69,8 +119,7 @@ html, body {
 }
 
 .jobCrest {
-	padding-top: 25px;
-	
+	width: 50%;
 	text-align: center;
 }
 
@@ -81,30 +130,23 @@ html, body {
 
 .holder {
 	width: 100%;
-	height: 100%;
+	
 	display: flex;
+	align-items: center;
 	
 
 }
 
 .kidDashWrapper {
 
-	width: 15%;
-	height: 15%;
+	width: 33%;
+	
 	float: left;
 
 
 }
 
-.kidDisplay {
 
-	width: 33%;
-	height: 33%;
-	display: flex;
-	
-	flex-direction: column;
-	justify-content: center;
-}
 
 #coins:hover {
 
@@ -112,11 +154,60 @@ html, body {
 
 	}
 
-.displayoJobs {
+#jobHolder {
 
-	width: 25%;
-	height: 100%;
-	background: red;
-	float: right;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
 
+.jobzName {
+
+	width: 100%;
+	text-align: center;
+}
+#jobz {
+
+	width: 30%;
+	-moz-animation-name: dropHeader;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: 1s;
+
+    -webkit-animation-name: dropHeader;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 1s;
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+
+}
+
+
+@-moz-keyframes dropHeader {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-webkit-keyframes dropHeader {
+    0% {
+       opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes dropHeader {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1	;
+    }
 }

@@ -1,2 +1,3 @@
-<div job-display index="{{$index}}" job = "choreRef" ng-repeat='choreRef in kidJobs track by $index' kid = 'kid' ></div>
-<h1 >Job Display Displaying</h1>
+<h1 class="jobzName"> {{kid.$id}}'s Jobs </h1>
+
+<div id='jobz' job-display index="{{$index}}" job = "choreRef" ng-repeat='choreRef in kidJobs track by $index' kid = 'kid' ></div>

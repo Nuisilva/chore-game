@@ -1,16 +1,34 @@
 <!-- This is my main HTML for Kid Dashboard -->
+<headder>
+	<nav id='kidNav'> 
+		 <a href="/html/">store</a> |
+		<a href="/html/">upgrades</a> |
+		<a href="/html/">battle</a> |
+	</nav>
+</headder>
+
 <div class= "holder">
-	<div class = 'kidDashWrapper'>
-		<div job-display index="{{$index}}" job = "choreRef" ng-repeat='choreRef in kidJobs track by $index' kid = 'kid' >
+		<div class = 'kidDashWrapper'>
+			<div job-display index="{{$index}}" job = "choreRef" ng-repeat='choreRef in kidJobs track by $index' kid = 'kid' >
+			</div>
 		</div>
-	</div>
 
 
-	<div class = 'kidDisplay'>
-		<div kid-info kid = "kid" >
+
+		<div class = 'kidDisplay'>
+			<div kid-info kid = "kid" ></div>
 		</div>
-	</div>
-	</div>
+
+		<div class='statusBar'>
+			<img src="assets/circle.svg"/>
+			<img src="assets/circle.svg"/>
+			<img src="assets/circle.svg"/>
+		</div>
+	
+
+
+
+</div>
 
 
 
