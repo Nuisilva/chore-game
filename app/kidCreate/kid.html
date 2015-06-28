@@ -1,12 +1,13 @@
-<div class= 'infoWrapper'>
-	<!-- <div class="avatarHolder"> -->
+<div id= 'infoWrapper'>
+	<div class="avatarHolder">
 		<a ui-sref='parent.kidJobz({ kid: kid.$id })' >
  			<img class="avatar" src="assets/robot.svg"></img>
  		</a>
- 	<!-- </div> -->
-    <div class='holder'>
+ 	</div>
+    <div class='info_holder'>
     	<div class="kidName"> {{kid.name}}</div>
-    	<dir-dropdown options="chore" selected-model="choreModel" extra-settings="settings" events= "event" ></dir-dropdown>
+    	
+    	<dir-dropdown class="jobChoice" options="chore" selected-model="choreModel" extra-settings="settings" events= "event" ></dir-dropdown>
     </div>
 
 </div>

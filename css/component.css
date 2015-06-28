@@ -19,6 +19,7 @@ html, body, .container, .scroller {
 	position: relative;
 	overflow: hidden;
 	overflow-y: scroller-inner;
+	height: 100vh;
 	
 }
 
