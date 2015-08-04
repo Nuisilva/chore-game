@@ -1,464 +1,382 @@
-html, body {
-
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	background-image: url('assets/4.jpg');
-}
-
-.top-bar-img {
-  max-width:40%;
-  height:auto;
-  border:none;
-  
-  margin: 0 auto;
-}
-
-.top-bar {
-  position: relative;
-}
-
-.caption {
-  color: #FF7600;
-  font: 3em 'Paytone One', sans-serif;
-  position: absolute;
+@import url(http://fonts.googleapis.com/css?family=Paytone+One);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Perform a value into a percentage value.
+ * @param {number} $value - The value which should be converted.
+ * @returns {number} $value - The percentage.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Aliases for j-column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Aliases for j-column-width().
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Alias for j-column-gutter().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Alias for j-span().
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Alias for j-shift().
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * Alias for j-unshift().
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ * Aliases for j-edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Alias for j-center().
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Alias for j-uncenter().
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Alias for j-stack().
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Alias for j-unstack().
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Alias for j-align().
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/**
+ * Alias for j-cf().
+ */
+body {
   width: 100%;
-  bottom: 10px;
-  left: 0;
- 
-  color: #fff;
-}
-.clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
-	}
-
-/*==========================================
-============================================
-			Parent Dash Display Css
-=============================================*/
-
-.main_parent_wrapper {
-
-	width: 100%;
-	display: flex;
-	flex-flow: row-wrap;
-	
-	
+  height: 100%;
+  margin: 0;
+  background-image: url(assets/background.jpg);
+  font: "Roboto Slab", serif;
+  color: white;
 }
 
-/*--->ParentDash kid display<---*/
-/* keeps everything scaling right */
-
-
-.parent_kidDisplay {
-
-	width: 40%;
-	display: flex;
-	flex-direction: column;
-	/*justify-content: center;*/
-	
+.child_job_name {
+  background-color: rgba(241, 240, 241, 0.295);
+  position: absolute;
+  left: 25%;
+  float: left;
+  clear: none;
+  width: 74.25%;
+  margin-left: 0;
+  margin-right: 3%;
+  z-index: 8;
 }
 
-/*--->ParentDash kid display<---*/
-
-	.jobHolder {
-
-		width: 40%;
-		display: flex;
-				
-	}
-
-/*ParentDash kid display/ kid.html*/
-
-/* ====================================
-	wrapper for Kid Display*/
-	/* keeps everything scaling right with parent_kidDisplay*/
-
-
-	#infoWrapper {
-	width: 100%;
-	display: flex;
-	background-image: url(assets/kidBar.svg);
-	background-repeat: no-repeat;
-	align-items: center;
-	}
-
-
-/* ===============================================
-		Avatar holder for Parent Dash */
-
-		.avatarHolder {
-	
-			width: 35%;
-			background-repeat: no-repeat;
-			background-size: cover;
-	
-		}
-
-		.avatar {
-			padding: 20%;
-			width: 100%;
-			opacity: .5;
- 			transition: opacity .25s ease-in-out;
-   			-moz-transition: opacity .25s ease-in-out;
-   			-webkit-transition: opacity .25s ease-in-out;
-		}
-
-		.avatar:hover {
-
-			opacity: 1;
-		}
-
-		.avatar:active {
-
-			opacity: 1;
-		}
-
-/* ==================================================
-		Name display for Parent Dash */
-
-		.info_holder {
-
-			width: 65%;
-			
-		}
-
-		.kidName {
-
-			padding-top: 4%;
-			color: #FF7600;
-			padding-left: 15px;
-			font-size: 3em;
-			font-family: 'Paytone One', sans-serif;
-			letter-spacing: 3px;
-		}
-
-
-/* ==================================================
-=======================================================
-			jobxDisplay */
-
-			
-		.jobz_name {
-
-			color: #FF7600;
-			padding-left: 15px;
-			font-size: 3em;
-			font-family: 'Paytone One', sans-serif;
-			letter-spacing: 3px;
-		}
-
-		.jobz_disp {
-
-			width: 20%;
-			margin: 10%;
-			display:flex;
-			background: rgba(66,110,125,.5);
-
-		}
-
-		/*.job_view {
-
-			width: 40%;
-		}*/
-
-		.jobzName {
-
-	width: 100%;
-	text-align: center;
+.child_job_name:last-child {
+  margin-right: 0;
 }
 
-
-.job_view {
-
-	width: 40%;
-	-moz-animation-name: dropHeader;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: ease;
-    -moz-animation-duration: 1s;
-
-    -webkit-animation-name: dropHeader;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-duration: 1s;
-
-    animation-name: dropHeader;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-duration: 1s;
-
+.p_kids:hover {
+  background-color: rgba(124, 176, 199, 0.3);
 }
 
-
-@-moz-keyframes dropHeader {
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-@-webkit-keyframes dropHeader {
-    0% {
-       opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-@keyframes dropHeader {
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1	;
-    }
+.p_kids:active {
+  background-color: #f1f0f1;
+  opacity: 0.231;
 }
 
+.kid_holder {
+  float: left;
+  clear: none;
+  width: 22.75%;
+  margin-left: 0;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: column;
+}
 
+.kid_holder:last-child {
+  margin-right: 0;
+}
 
+.p_nav {
+  width: 100%;
+  background-color: rgba(124, 176, 199, 0.3);
+}
 
+.p_nav h1 {
+  float: left;
+  clear: none;
+  width: 31.33333%;
+  margin-left: 0;
+  margin-right: 3%;
+  font-size: 5em;
+  margin: 0;
+  text-align: center;
+}
 
+.p_nav h1:last-child {
+  margin-right: 0;
+}
 
+.p_wrapper {
+  width: 100%;
+}
 
+.p_jobs {
+  float: left;
+  clear: none;
+  width: 58.8%;
+  margin-left: 0;
+  margin-right: 3%;
+}
 
+.p_jobs:last-child {
+  margin-right: 0;
+}
 
+.jobz_disp {
+  float: left;
+  clear: none;
+  width: 22.75%;
+  margin-left: 0;
+  margin-right: 3%;
+}
 
+.jobz_disp:last-child {
+  margin-right: 0;
+}
 
+.k_wrapper {
+  float: left;
+  clear: none;
+  width: 79.4%;
+  margin-left: 0;
+  margin-right: 3%;
+  display: flex;
+}
 
+.k_wrapper:last-child {
+  margin-right: 0;
+}
 
+.kid_font {
+  width: 35%;
+  float: right;
+  font-size: 38px;
+  font-family: "Open Sans";
+  color: white;
+  line-height: 1.2;
+  -moz-transform: matrix(1.5504, 0, 0, 1.5504, 0, 0);
+  -webkit-transform: matrix(1.5504, 0, 0, 1.5504, 0, 0);
+  -ms-transform: matrix(1.5504, 0, 0, 1.5504, 0, 0);
+}
 
+.info_holder {
+  float: left;
+  clear: none;
+  width: 48.5%;
+  margin-left: 0;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: column;
+}
 
+.info_holder:last-child {
+  margin-right: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*Kid display for Parent's Dash*/
-/*--------------------------------*/
-
-
-
-/*the avartar stuff*/
-
-/*.avatarHolder {
-	
-	width: 60%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	
+.top_bar {
+  background-image: url(assets/kid_bar.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .avatar {
-	padding: 10%;
-	width: 85%;
-	opacity: .5;
- transition: opacity .25s ease-in-out;
-   -moz-transition: opacity .25s ease-in-out;
-   -webkit-transition: opacity .25s ease-in-out;
+  width: 100%;
+  padding: 15%;
+  position: relative;
+  opacity: 0.5;
 }
 
 .avatar:hover {
-
-	opacity: 1;
+  opacity: 1.0;
 }
 
-.avatar:active {
-
-	opacity: 1;
-}
-*/
-/*///////information -- Name, dropdown, status bar */
-
-/*.dirKidDisplay {
-	width: 100%;
-	display: flex;
-
-	flex-direction: column;
-	justify-content: center;
+.avatar_wrapper {
+  float: left;
+  clear: none;
+  width: 48.5%;
+  margin-left: 0;
+  margin-right: 3%;
 }
 
-.kidDisplay {
-
-	width: 33%;
-}
-.dirJobDispay {
-
-	width: 50%;
-
+.avatar_wrapper:last-child {
+  margin-right: 0;
 }
 
-#kidNav {
-
-	font-family: 'Paytone One', sans-serif;
-	font-size: 24px;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	text-decoration: none;
-
-}
-.statusBar {
-	width: 20%;
-}
-.jobHolder {
-
-	width: 40%;
-}*/
-
-
-
-/*.infoWrapper {
-	padding-top: 15px;
-	width: 60%;
-	display: flex;
-	background-image: url(assets/kidBar.svg);
-	background-repeat: no-repeat;
-*/
-	/*flex-direction: column;
-	justify-content: flex-start;*/
-/*}
-.spacer {
-
-	width: 75%;
-	height: 66%;
-	display: none;
+.gem {
+  padding: 2%;
 }
 
-
-.kidName {
-
-	height: 33%;
-	color: #FF7600;
-	padding-left: 15px;
-	font-size: 2em;
-	font-family: 'Paytone One', sans-serif;
-	letter-spacing: 3px;
+.gem_holder {
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.702);
+  border-style: solid;
+  border-radius: 15px;
+  vertical-align: center;
 }
 
-#kidRepeate {
-
-	font-family: 'Paytone One', sans-serif;*/
-/*	color: #FF7600;
-}
-.JobChoice {
-
-	height: 33%;
+.gem_holder p {
+  color: white;
 }
 
-.jobCrest {
-	width: 50%;
-	text-align: center;
+.kid_info {
+  float: right;
+  float: left;
+  clear: none;
+  width: 48.5%;
+  margin-left: 0;
+  margin-right: 3%;
 }
 
-/*  =========================
-	Kid Dashboard Stuff
-	=========================
-*/
-/*
-.holder {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-content: space-between;
+.kid_info:last-child {
+  margin-right: 0;
 }
 
-.kidDashWrapper {
-
-	width: 33%;
-	
-	float: left;
-
-
+.jobz_bar {
+  background-image: url(assets/job_bar.svg);
+  background-repeat: no-repeat;
+  padding: 40px;
 }
 
-
-
-#coins:hover {
-
-	color: #FF7600;
-
-	}
-
-#jobHolder {
-
-	width: 40%;
-	display: flex;
-	flex-wrap: wrap;
-}*/
-/*
-.jobzName {
-
-	width: 100%;
-	text-align: center;
-}
-#jobz {
-
-	width: 30%;
-	-moz-animation-name: dropHeader;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: ease;
-    -moz-animation-duration: 1s;
-
-    -webkit-animation-name: dropHeader;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-duration: 1s;
-
-    animation-name: dropHeader;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-duration: 1s;
-
+.circle {
+  float: left;
+  clear: none;
+  width: 48.5%;
+  margin-left: 0;
+  margin-right: 3%;
+  float: left;
+  background-image: url(assets/circle.svg);
+  background-repeat: no-repeat;
 }
 
-
-@-moz-keyframes dropHeader {
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
+.circle:last-child {
+  margin-right: 0;
 }
-@-webkit-keyframes dropHeader {
-    0% {
-       opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-@keyframes dropHeader {
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1	;
-    }
-}
-*/
