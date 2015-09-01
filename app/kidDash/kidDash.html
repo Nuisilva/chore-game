@@ -1,34 +1,43 @@
-<!-- This is my main HTML for Kid Dashboard -->
-<headder>
-	<nav id='kidNav'> 
-		 <a href="/html/">store</a> |
-		<a href="/html/">upgrades</a> |
-		<a href="/html/">battle</a> |
-	</nav>
-</headder>
+<!-- 
+<div class='dash_wrapper'> -->
 
-<div class= "holder">
-		<div class = 'kidDashWrapper'>
-			<div job-display index="{{$index}}" job = "choreRef" ng-repeat='choreRef in kidJobs track by $index' kid = 'kid' >
+	<div class='wrapper'>
+		
+		<div class='icons'>
+			<nav> 
+					 <a href="/html/"> <img  class='store'src="assets/store.svg"> </img>
+					 </a> 
+					<a ui-sref='kid/:kid.statz({ kid: kid.$id })'>
+						<img class='battle' src="assets/battle.svg"> </img>
+					</a>
+					<a ui-sref='kid/:kid.kidJobz({ kid: kid.$id })'>
+						<img  class='chores' src="assets/chores.svg"></img>
+					</a>
+			</nav>
+		</div>
+
+		<div class='info'>
+
+			<div>
+				<span>{{kid.$id}}</span>
+				<span>coins</span>
 			</div>
+			<h2>{{kid.$id}}</h2>
+			<div> Robots</div>
+		</div>
+	</div>
+
+	<div class='daJobzz' ui-view>
 		</div>
 
-
-
-		<div class = 'kidDisplay'>
-			<div kid-info kid = "kid" ></div>
-		</div>
-
-		<div class='statusBar'>
-			<img src="assets/circle.svg"/>
-			<img src="assets/circle.svg"/>
-			<img src="assets/circle.svg"/>
-		</div>
 	
 
+<!-- </div>
+ -->
 
 
-</div>
+
+
 
 
 

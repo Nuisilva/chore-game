@@ -1,96 +1,64 @@
 .k_wrapper {
-  @include col(4/5);
-  display: flex;
 
- 
-
+	// display: flex;
+	// flex-direction: column;
+	  opacity: 0.8;
+	&:hover{
+	  background-color: rgba(241, 240, 241, 1.0);
+	  opacity: 1.0;
+	  color: orange;
+	 }
 }
 
-.kid_font {
-	width: 35%;
-	float: right;
-  font-size: 38px;
-  font-family: "Open Sans";
-  color: rgb(255, 255, 255);
-  line-height: 1.2;
-  -moz-transform: matrix( 1.55040498719211,0,0,1.55040498719211,0,0);
-  -webkit-transform: matrix( 1.55040498719211,0,0,1.55040498719211,0,0);
-  -ms-transform: matrix( 1.55040498719211,0,0,1.55040498719211,0,0);
-  
-}
-
-.info_holder {
-	@include col(1/2);
-
-	display: flex;
-	flex-direction: column;
-}
-
-.top_bar {
-
-	background-image: url(assets/kid_bar.svg);
-	background-repeat: no-repeat;
-	 display: flex;
-	  flex-direction: row;
-	  align-items: center;
-	  
-	
-
-
-}
-
-.avatar {
-	width: 100%;
-	padding: 15%;
-	position: relative;
-	opacity: 0.5;
-		&:hover {
-		opacity: 1.0;
-		}	
-}
 .avatar_wrapper {
 
-	@include col(1/2);
+	@include col (1/2);
+	padding-bottom: 5%;
+	text-align: center;
+	div {
+		background-image: url(assets/circle.svg);
+		background-repeat: no-repeat;
+		img {
+			margin: 18%;
+			width: 65%;
+			vertical-align: center;
+		}
+	}
 }
-.gem {
-	padding: 2%;
-}
-.gem_holder {
-	
-	margin: 5%;
+
+.info_wrapper {
+	@include col (1/2);
 	display: flex;
-	flex-direction: row;
-	border-width: 2px;
-  	border-color: rgba(255, 255, 255 , 0.702);
-  	border-style: solid;
-  	border-radius: 15px;
-  	vertical-align: center;
-  	p {
+	flex-direction: column;
+	justify-content: center;
+	h1 {
 
-  		color: white;
-  	}
-  
+		
+			&:hover{
+
+				color: orange;
+			}
+		}
+	div {
+
+
+	  border-width: 2px;
+	  border-color: rgb(255, 255, 255);
+	  border-style: solid;
+	  border-radius: 20px;
+	  margin-bottom: 5%;
+	  display: flex;
+	  flex-direction: row;
+	  	img {
+
+	  		@include col (1/4);
+	  		vertical-align: center;
+
+	  		}
+	  		p{
+	  			color: #fff;
+	  			font-family: opensans, san-seriff;
+	  		}
+
+	  	}
 }
-
-.kid_info {
-	float: right;
-	@include col(1/2);
-
-}
-.jobz_bar {
-
-	background-image: url(assets/job_bar.svg);
-	background-repeat: no-repeat;
-	padding: 40px;
-}
-
-
-.circle{
-	@include col(1/2);
-	float: left;
-	background-image: url(assets/circle.svg);
-	background-repeat: no-repeat;
-	
-}
-
-

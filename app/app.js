@@ -102,6 +102,56 @@ app.config(function($stateProvider, $urlRouterProvider){
       }
   })
 
+  .state('kid/:kid.kidJobz', {
+      url: '/jobz',
+      params:{
+          kid: {
+            value: 'stufff'
+          }
+
+      },
+      templateUrl: 'app/parentDash/jobzDisplay.html',
+      controller: 'kidDashCtrl',
+
+      //directives have access to the controllers because they are injected here
+      // you dont actually have to put them in the html for them to have access to the socpes
+      resolve: {
+        kidRef: function(kidService, $stateParams){
+          return kidService.getKid($stateParams.kid);
+          },
+        
+          choreRef : function(choreService){
+            return choreService.choreList();
+            }
+          }
+  })
+
+  .state('kid/:kid.statz', {
+      url: '/staz',
+      params:{
+          kid: {
+            value: 'stufff'
+          }
+
+      },
+      templateUrl: 'app/kidDash/statz.html',
+      controller: 'kidDashCtrl',
+
+      //directives have access to the controllers because they are injected here
+      // you dont actually have to put them in the html for them to have access to the socpes
+      resolve: {
+        kidRef: function(kidService, $stateParams){
+          return kidService.getKid($stateParams.kid);
+          },
+        
+          choreRef : function(choreService){
+            return choreService.choreList();
+            }
+          }
+  })
+
+
+
   // login stuff  
 
   // .when('/login',{

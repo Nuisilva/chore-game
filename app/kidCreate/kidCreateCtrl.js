@@ -11,7 +11,9 @@ angular.module('choreGame');
         name: name,
         password: password,
         coins: 0,
-        role: 'child'
+        role: 'child',
+        energy: energy,
+        armor: armor,
       };
       $scope.kid.$save();
   	}

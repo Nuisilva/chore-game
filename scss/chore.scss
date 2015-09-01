@@ -1,0 +1,23 @@
+.chore_create{
+	display: flex;
+	flex-direction: column;
+	form{
+
+		@include span(2/3);
+		input {
+			color: black;
+			border-width: 2px;
+		  	border-color: rgb(255, 255, 255);
+		  	border-style: solid;
+		  	border-radius: 20px;
+		  	opacity: 0.702;
+		}
+	}
+
+	ul {
+
+		display: flex;
+		flex-direction: column;
+	}
+}
+
