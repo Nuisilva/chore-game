@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Paytone+One);
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,900);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
 /*  Syntax Quick Reference
   --------------------------
@@ -185,7 +186,6 @@
 }
 
 .jobz_disp {
-  display: flex;
   float: left;
   clear: none;
   width: 25%;
@@ -196,6 +196,159 @@
 
 body {
   background-image: url(assets/4.jpg);
+}
+
+/* General styles for all menus */
+.cbp-spmenu {
+  background: #47a3da;
+  position: fixed;
+}
+
+.cbp-spmenu h3 {
+  color: #afdefa;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  background: #0d77b6;
+}
+
+.cbp-spmenu a {
+  display: block;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+  background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+  background: #afdefa;
+  color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+  border-bottom: 1px solid #258ecd;
+  padding: 1em;
+}
+
+.cbp-spmenu-horizontal {
+  width: 100%;
+  height: 150px;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+  height: 100%;
+  width: 20%;
+  float: left;
+}
+
+.cbp-spmenu-horizontal a {
+  float: left;
+  width: 20%;
+  padding: 0.8em;
+  border-left: 1px solid #258ecd;
+}
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+  left: -240px;
+}
+
+.cbp-spmenu-right {
+  right: -240px;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+  left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+.cbp-spmenu-top {
+  top: -150px;
+}
+
+.cbp-spmenu-bottom {
+  bottom: -150px;
+}
+
+.cbp-spmenu-top.cbp-spmenu-open {
+  top: 0px;
+}
+
+.cbp-spmenu-bottom.cbp-spmenu-open {
+  bottom: 0px;
+}
+
+/* Push classes applied to the body */
+.cbp-spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.cbp-spmenu-push-toright {
+  left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+  left: -240px;
+}
+
+/* Transitions */
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Example media queries */
+@media screen and (max-width: 55.1875em) {
+  .cbp-spmenu-horizontal {
+    font-size: 75%;
+    height: 110px;
+  }
+  .cbp-spmenu-top {
+    top: -110px;
+  }
+  .cbp-spmenu-bottom {
+    bottom: -110px;
+  }
+}
+
+@media screen and (max-height: 26.375em) {
+  .cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+  .cbp-spmenu-left,
+  .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+  .cbp-spmenu-right {
+    right: -190px;
+  }
+  .cbp-spmenu-push-toright {
+    left: 190px;
+  }
 }
 
 .k_wrapper {
@@ -280,19 +433,16 @@ body {
   font-family: opensans, san-seriff;
 }
 
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .top_opacity {
   background-color: rgba(241, 240, 241, 0.295);
   width: 100%;
-}
-
-#index_btn {
-  border-width: 2px;
-  border-color: white;
-  border-style: solid;
-  border-radius: 20px;
-  opacity: 0.702;
-  width: 252px;
-  height: 40px;
 }
 
 .mid {
@@ -310,38 +460,149 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color: white;
+  font-family: "Orbitron", serif;
+  color: orange;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 20px;
 }
 
-.chore_create {
-  display: flex;
-  flex-direction: column;
+h3 {
+  font-size: 15px;
 }
 
-.chore_create form {
+button {
+  font-family: "Orbitron", serif;
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  font-size: 1.35em;
+  border: none;
+  outline: none;
+  background-color: rgba(241, 240, 241, 0);
+}
+
+button:hover,
+button:focus {
+  outline: none;
+}
+
+.cl-effect-13 button {
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.cl-effect-13 button::before {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 1.2em;
+  -webkit-transition: text-shadow 0.3s, color 0.3s;
+  -moz-transition: text-shadow 0.3s, color 0.3s;
+  transition: text-shadow 0.3s, color 0.3s;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.cl-effect-13 button:hover::before,
+.cl-effect-13 button:focus::before {
+  color: #fff;
+  text-shadow: 10px 0 #fff, -10px 0 #fff;
+}
+
+.cl-effect-13 button:hover,
+.cl-effect-13 button:focus {
+  color: orange;
+}
+
+.create h1 {
+  padding-left: 1%;
+}
+
+.create form {
   float: left;
   clear: none;
-  width: 66.66667%;
+  width: 50%;
   margin-left: 0;
+  margin-right: 0;
+  margin: 0 auto;
+}
+
+.create form input, .create form select {
+  margin: 5%;
+  font-family: "Orbitron", serif;
+  line-height: 1.5;
+  font-size: 1.4em;
+  padding: 5px 10px;
+  color: orange;
+  display: block;
+  background: transparent;
+}
+
+.create form select {
+  width: 20px;
+}
+
+.create form label {
+  color: orange;
+  font-family: "Orbitron", serif;
+  padding-left: 5%;
+  font-size: 15px;
+}
+
+.create .create_holder {
+  float: left;
+  clear: none;
+  width: 48.5%;
+  margin-left: 0;
+  margin-right: 3%;
+  margin: 0 auto;
+}
+
+.create .create_holder:last-child {
   margin-right: 0;
 }
 
-.chore_create form input {
-  color: black;
-  border-width: 2px;
-  border-color: white;
-  border-style: solid;
-  border-radius: 20px;
-  opacity: 0.702;
+.create select {
+  font-family: "Orbitron", serif;
+  font-color: orange;
 }
 
-.chore_create ul {
-  display: flex;
-  flex-direction: column;
+.create ul {
+  float: left;
+  clear: none;
+  width: 31.33333%;
+  margin-left: 0;
+  margin-right: 3%;
+  margin-left: 10%;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.create ul:last-child {
+  margin-right: 0;
+}
+
+.create ul li {
+  font-family: "Orbitron", serif;
+  font-size: 24px;
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
 }
 
 .wrapper {
@@ -395,17 +656,12 @@ h2 {
 }
 
 .daJobzz {
-  float: left;
-  clear: none;
-  width: 50%;
-  margin-left: 0;
-  margin-right: 0;
   background-color: rgba(241, 240, 241, 0.259);
 }
 
 .info_holder {
-  width: 50%;
-  overflow: hidden;
+  padding-top: 5%;
+  clear: both;
 }
 
 .info_robot {
@@ -414,8 +670,6 @@ h2 {
   width: 48.5%;
   margin-left: 0;
   margin-right: 3%;
-  padding-right: 1px;
-  float: left;
 }
 
 .info_robot:last-child {
@@ -425,15 +679,23 @@ h2 {
 .stats {
   float: left;
   clear: none;
-  width: 48.5%;
+  width: 31.33333%;
   margin-left: 0;
   margin-right: 3%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  padding-top: 50px;
+  margin: 0 auto;
 }
 
 .stats:last-child {
   margin-right: 0;
+}
+
+.stats div {
+  position: relative;
+}
+
+.stats div h3 {
+  position: absolute;
+  bottom: 14%;
+  left: 35%;
 }

@@ -1,45 +1,24 @@
-<div class="kid_holder"	>	
+<h1> Parents Dash </h1>
+
+<!-- <div class="main">
+				<section>
+					<h2>Slide Menus</h2> -->
+					<!-- Class "cbp-spmenu-open" gets applied to menu -->
+					<!-- <button id="showLeft">Show/Hide Left Slide Menu</button>
+					
+				</section>
+			</div>
+			
+ --><div class="kid_holder"	>	
 	<div dir-kid  kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids">
 	</div>
+<!-- 	
+<button id="showLeft">Show/Hide Left Slide Menu</button>
+ -->
 </div>
 
 <div class='job_holder'>
 		<div ui-view ></div>
 </div>	
-			
 
-	
-			
-		
-
-
-
-
-
-
-
-
-<!-- 
-<div class="top-bar">
-  <img class="top-bar-img" src="assets/top-bar.svg">
-  <span class="caption">Parent Dash</span>
-</div>
-
-<div class="main_parent_wrapper">
-	<div class="parent_kidDisplay">
-		<span  dir-kid  kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids">
-		</span>
-	</div>
-
-	<div class="jobz_disp" >
-	 	<div class= "job_view" ui-view ></div>
-	</div>
-</div>
-
- -->
-
- <div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores' kid='theKid'>
-
-
-<!-- </div> -->
-	
+<div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores' kid='theKid'>

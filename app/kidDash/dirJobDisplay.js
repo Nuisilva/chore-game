@@ -17,7 +17,7 @@ app.directive('kidInfo', function($firebaseArray, fb, $firebaseObject){
 
 		controller : function($scope){
 
-			console.log('kidInfo working')
+			console.log('kid.$id')
 
 			
 			// $scope.daKid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId '/jobs' ));

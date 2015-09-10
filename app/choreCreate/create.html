@@ -1,25 +1,25 @@
-<div class= 'chore_create'>
+<div class= 'create'>
     <h1>Add Chores</h1>
+    <div class='create_holder'>
+            <form name="form">
+                <input type="text" ng-model="newChoreTitle" placeholder="New Chore Title..." required/>
+                <input type="text" ng-model="choreDescription" placeholder="Chore Description" required/>
+                <label> Chore Value
+                <select ng-model="currentValue.coins" required >
+                    <option ng-repeat="value in pointValues" placeholder='Point Value' value="{{value.coins}}" >{{value.coins}}
+                    </option>
+                </select >
+                </label>
+                <div class="cl-effect-13">
+                <button  ng-disabled="newChoreForm.$invalid" ng-click="createChore(newChoreTitle, choreDescription, currentValue.coins)">Add Chore</button>
+                </div>   
+            </form>
 
-    <form name="newChoreForm">
-        <input type="text" ng-model="newChoreTitle" placeholder="New Chore Title..." required/>
-        <input type="text" ng-model="choreDescription" placeholder="Chore Description" required/>
-        <label> Chore Value
-        <select ng-model="currentValue.coins" required >
-            <option ng-repeat="value in pointValues" value="{{value.coins}}" >{{value.coins}}
-            </option>
-        </select >
-        </label>
-        
-        <button ng-disabled="newChoreForm.$invalid" ng-click="createChore(newChoreTitle, choreDescription, currentValue.coins)">Add Chore</button>   
-    </form>
-
-    
-
-    <ul >
-        <li ng-repeat="chore in chore">
-                <button ng-click="remove($index)"> X </button>
-                {{ chore.title }}
-        </li>
-    </ul>
+            <ul >
+                <li ng-repeat="chore in chore">
+                        <button ng-click="remove(chore.title)"> X </button>
+                        {{ chore.title }}
+                </li>
+            </ul>
+    </div>
 </div>

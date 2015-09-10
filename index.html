@@ -3,8 +3,11 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="animate.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 
 <link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+<link rel='stylesheet' type='text/css' href='style.css'>
 <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" > -->
 
 
@@ -16,12 +19,19 @@
 
  <body >
  <div class= 'top_opacity' ng-controller='mainCtrl'>
-    <button id="index_btn" ng-click="go('/choreCreate')">Create Chore</button>
-    <button class="index_btn" ng-click="go('/kidcreate')">add child</button>
-    <button class="index_btn" ng-click="go('/kid')">Child</button>
-    <button class="btn-default" ng-click="go('/parent')">Home</button>
-  </div>
+
+  <nav class="cl-effect-13">
+    <button   ng-click="go('/choreCreate')">Create Chore </button>
+    <button  ng-click="go('/kidcreate')">add child
+    </button>
+    <button  ng-click="go('/kid')">Child
+    </button>
+    <button  ng-click="go('/parent')">Home
+    </button>
+  </nav>
   <div ui-view>TEST</div>
+
+      
 
 
 <!-- JQuery -->
@@ -74,6 +84,7 @@
   <!-- Parent Dash -->
 
   <script src="app/parentDash/pDashCtrl.js"></script>
+  
 
   <!-- kid Dash -->
   
