@@ -482,6 +482,7 @@ h2 {
 
 h3 {
   font-size: 15px;
+  padding: 2%;
 }
 
 button {
@@ -539,6 +540,16 @@ button:focus {
 .cl-effect-13 button:hover,
 .cl-effect-13 button:focus {
   color: orange;
+}
+
+.dropdown-menu, .dropdown-menu-form {
+  font-family: "Orbitron", serif;
+  color: orange;
+  list-style-type: none;
+}
+
+.dropdown-menu::hover, .dropdown-menu-form::hover {
+  color: white;
 }
 
 .create h1 {
@@ -669,6 +680,10 @@ button:focus {
 
 .daJobzz {
   background-color: rgba(241, 240, 241, 0.259);
+}
+
+.kid_title {
+  padding-left: 38%;
 }
 
 .info_holder {

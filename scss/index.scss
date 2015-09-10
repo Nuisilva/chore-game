@@ -39,6 +39,7 @@ h2{
 h3 {
 
   font-size: 15px;
+  padding: 2%;
 }
 
 button {
@@ -96,4 +97,15 @@ button:focus {
 .cl-effect-13 button:hover,
 .cl-effect-13 button:focus {
   color: orange;
+}
+
+.dropdown-menu, .dropdown-menu-form{
+
+  font-family: $obt;
+  color: orange;
+  list-style-type: none;
+  &::hover {
+
+    color: white;
+  }
 }
