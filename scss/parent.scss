@@ -2,13 +2,14 @@
 
 	@include span(2/3);
 	// display: inline-block;
-	 background-color: rgba(241, 240, 241, .259);
-  
+	 
+  	
   
 		div {
 			
 			display: inline-block;
 			width: 50%;
+			padding-left: 5%;
 
 		}
 
@@ -23,7 +24,8 @@
 .jobz_disp {
 
 // display: flex;
-@include span(1/4);justify-content: flex-start;
+@include span(1/4);
+// justify-content: flex-start;
 
 }
 

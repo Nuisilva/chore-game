@@ -169,12 +169,12 @@
   width: 66.66667%;
   margin-left: 0;
   margin-right: 0;
-  background-color: rgba(241, 240, 241, 0.259);
 }
 
 .job_holder div {
   display: inline-block;
   width: 50%;
+  padding-left: 5%;
 }
 
 .kid_holder {
@@ -191,7 +191,6 @@
   width: 25%;
   margin-left: 0;
   margin-right: 0;
-  justify-content: flex-start;
 }
 
 body {
@@ -375,12 +374,12 @@ body {
   margin-right: 0;
 }
 
-.avatar_wrapper div {
+.avatar_wrapper .avatar {
   background-image: url(assets/circle.svg);
   background-repeat: no-repeat;
 }
 
-.avatar_wrapper div img {
+.avatar_wrapper .avatar img {
   margin: 18%;
   width: 65%;
   vertical-align: center;
@@ -431,6 +430,19 @@ body {
 .info_wrapper div p {
   color: #fff;
   font-family: opensans, san-seriff;
+}
+
+.j_title {
+  display: inline-block;
+  text-align: center;
+  font-family: "Orbitron", serif;
+  color: orange;
+}
+
+#coins {
+  display: inline-block;
+  text-align: center;
+  padding-left: 25%;
 }
 
 *:after,

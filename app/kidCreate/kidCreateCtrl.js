@@ -12,8 +12,8 @@ angular.module('choreGame');
         password: password,
         coins: 0,
         role: 'child',
-        energy: energy,
-        armor: armor,
+        // energy: energy,
+        // armor: armor,
       };
       $scope.kid.$save();
   	}
