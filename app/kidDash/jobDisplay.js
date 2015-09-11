@@ -1,6 +1,6 @@
 var app = angular.module('choreGame');
 
-app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject, $route){
+app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject){
 
 
 	return {
@@ -14,11 +14,11 @@ app.directive('jobDisplay', function($firebaseArray, fb, $firebaseObject, $route
 
 		},
 
-				
+		restrict: 'AE',
 
 		controller : function($scope){
 
-console.log($scope.job)
+			console.log('JobDisplay Directive Working', $scope.kid)
 
 			$scope.addCoins = function(){
 				ref = new Firebase(fb.url + '/kidList/' + $scope.kid.$id + '/jobs/' + $scope.index)

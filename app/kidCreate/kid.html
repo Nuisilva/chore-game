@@ -1,12 +1,55 @@
-	<div class="avatarHolder">
- 		<img class="avatar" src="assets/robot1.svg"></img>
+<div class= 'k_wrapper'>
 
- 		<div id= 'infoWrapper'>
-    		<div class="kidName"> {{kid.name}}</div>
-    		<div class="spacer">stuff</div>
-    		<dir-dropdown options="chore" selected-model="choreModel" extra-settings="settings" events= "event" ></dir-dropdown>
+			<div class="avatar_wrapper">
+				<div class="avatar">
+					<a ui-sref='parent.kidJobz({ kid: kid.$id })'>	
+						<img class='avatar' src="assets/robot.svg">
+						</img>
+					</a>
+				</div>
+				<span dir-dropdown  options="chore" selected-model="choreModel" extra-settings="settings" events= "event" >
+				</span>
+			</div>
 
-    	</div>
 
-    </div>
+	
+			
+			<div class='info_wrapper'>
+				<h1> {{kid.name}}</h1>
+				<div>
+					<img src="assets/gem.png"></img>
+					<p> {{kid.coins}} </p>
+				</div>
+				<div>
+					<img src="assets/gem.png"></img>
+					<p> {{kid.coins}} </p>
+				</div>
+			</div>
+			
+			
+</div>
+		
+	
+
+
+
+	<!-- <div class= 'k_avatar'>
+		<a ui-sref='parent.kidJobz({ kid: kid.$id })' >
+	 		<img  src="assets/robot.svg"></img>
+	 	</a>
+	 	
+	</div>
+	    
+	<div class='k_info'>
+	   <div> {{kid.name}}</div>
+		
+	    
+	 </div> -->
+
+
+
+
+
+
+
 

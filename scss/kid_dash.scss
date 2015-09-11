@@ -1,0 +1,71 @@
+
+.dash_wrapper {
+
+
+}
+
+
+.wrapper{
+	background-image: url('assets/bg.svg');
+	background-repeat: no-repeat;
+	height: 140px;
+	width: 50%;
+	margin: 0 auto;
+	
+
+
+.info {
+	@include span (1/2);
+	
+	div {
+
+		padding-top: 20px;
+		padding-left: 40%;
+		// @include span (1/2);
+		color: white;
+
+	}
+	
+	h2{
+		@include span (1/2, $offset: 2/5);
+		margin-left: 40%;
+		margin-top: 5%;
+	}
+}
+
+
+.icons{
+	@include span (1/2);
+		
+	
+	// float: left;
+	// display: flex;
+	// align-items: flex-end;
+	// justify-content: space-around;
+
+	.store, .battle, .chores{
+		@include span (1/4);
+		margin-left: 5%;
+		margin-top: 25%;
+		
+		
+	}
+}
+}
+
+.daJobzz {
+	
+
+	 // @include span(1/2);
+	// display: inline-block;
+	 background-color: rgba(241, 240, 241, .259);
+  
+  
+		
+}
+
+.kid_title {
+
+	padding-left: 38%;
+}
+

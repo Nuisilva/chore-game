@@ -1,0 +1,56 @@
+.info_holder {
+
+	padding-top: 5%;
+	clear: both;
+	
+}
+
+.info_robot{
+	
+		@include col (1/2);
+		
+
+	}
+
+.stats{
+		@include col (1/3);
+		padding-top: 50px;
+		margin: 0 auto;
+
+		div {
+
+			position: relative;
+			h3{
+				position: absolute;
+				bottom: 14%;
+				left: 35%;
+			}
+		}
+
+	}
+// 	div {
+
+// 		@include col (1/2);
+// 	}
+
+// }
+
+
+// .info_robot {
+// 	@include span (1/2);
+	
+// 	float: left;
+// }
+
+// .info_holder {
+// 	@include span (1/2);
+
+// 	float: left;
+	
+// }
+
+// .energy {
+// 		padding: 5%;
+// 		background-image: url('assets/nrg.svg');
+// 		background-repeat: no-repeat;
+// 	}

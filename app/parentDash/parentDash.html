@@ -1,8 +1,24 @@
+<h1> Parents Dash </h1>
 
-<!-- <div controller='pDashCtrl'> -->
+<!-- <div class="main">
+				<section>
+					<h2>Slide Menus</h2> -->
+					<!-- Class "cbp-spmenu-open" gets applied to menu -->
+					<!-- <button id="showLeft">Show/Hide Left Slide Menu</button>
+					
+				</section>
+			</div>
+			
+ --><div class="kid_holder"	>	
+	<div dir-kid  kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids">
+	</div>
+<!-- 	
+<button id="showLeft">Show/Hide Left Slide Menu</button>
+ -->
+</div>
 
-<dir-kid kid="theKid" chore="chore" role = "parent" ng-repeat="theKid in kids" ></dir-kid>
-<div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores'>
-<!-- </div> -->
-	
+<div class='job_holder'>
+		<div ui-view ></div>
+</div>	
 
+<div job-display job= "choreRef" role = "parent" ng-repeat='choreRef in kidsChores' kid='theKid'>

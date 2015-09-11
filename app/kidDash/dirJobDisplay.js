@@ -1,6 +1,6 @@
 var app = angular.module('choreGame');
 
-app.directive('kidInfo', function($firebaseArray, fb, $firebaseObject, $route){
+app.directive('kidInfo', function($firebaseArray, fb, $firebaseObject){
 
 	return {
 
@@ -16,6 +16,8 @@ app.directive('kidInfo', function($firebaseArray, fb, $firebaseObject, $route){
 		
 
 		controller : function($scope){
+
+			console.log('kid.$id')
 
 			
 			// $scope.daKid = $firebaseObject(new Firebase(fb.url + '/kidList/' + $route.current.params.kidId '/jobs' ));

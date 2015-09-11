@@ -33,7 +33,7 @@ app.directive('dirKid', function(fb, $firebaseArray, $firebaseObject){
         // var choreArr = $firebaseArray(choreRef);
         var choreObj = $firebaseObject(choreRef);
 
-        console.log($scope.chore)
+        // console.log($scope.chore)
 
          
          $scope.choreModel = [],

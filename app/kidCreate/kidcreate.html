@@ -1,11 +1,15 @@
-<div>
-    <p>Kids</p>
+<div class= 'create'>
+    <h1>Kids</h1>
 
-    <form name="newKidForm">
+    <form name="form">
         <input type="text" ng-model="newKidName" placeholder="New Child Name..." required/>
         <input type="text" ng-model="password" placeholder="Child's Password" required/>
-        <button ng-disabled="newKidForm.$invalid" ng-click="createKid(newKidName, password)">Add Kid</button>
+     <div class="cl-effect-13">
+     <button ng-disabled="newKidForm.$invalid" ng-click="createKid(newKidName, password, energy)">Add Kid</button>
+    </div>
+
     </form>
+
 
     <ul>
         <li ng-repeat="kid in kid">
